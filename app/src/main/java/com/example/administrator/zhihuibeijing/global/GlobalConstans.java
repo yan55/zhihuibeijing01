@@ -5,6 +5,6 @@ package com.example.administrator.zhihuibeijing.global;
  */
 
 public class GlobalConstans {
-    public static final String CATEGORY_URL = "http://10.0.2.2:8080/zhbj/categories.json";
+    public static final String CATEGORY_URL = "http://192.168.112.1:8080/zhbj/categories.json";
 
 }
