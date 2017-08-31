@@ -1,9 +1,5 @@
 [
     {
-        "merged": "D:\\android_studio\\zhihuibeijing\\sliding_menu\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\slidingmenumain.xml",
-        "source": "D:\\android_studio\\zhihuibeijing\\sliding_menu\\build\\intermediates\\bundles\\debug\\res\\layout\\slidingmenumain.xml"
-    },
-    {
         "merged": "D:\\android_studio\\zhihuibeijing-master\\sliding_menu\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\slidingmenumain.xml",
         "source": "D:\\android_studio\\zhihuibeijing-master\\sliding_menu\\build\\intermediates\\bundles\\debug\\res\\layout\\slidingmenumain.xml"
     }

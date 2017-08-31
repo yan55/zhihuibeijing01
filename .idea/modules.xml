@@ -3,10 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/sliding_menu/sliding_menu.iml" filepath="$PROJECT_DIR$/sliding_menu/sliding_menu.iml" />
-      <module fileurl="file://$PROJECT_DIR$/sliding_menu/sliding_menu.iml" filepath="$PROJECT_DIR$/sliding_menu/sliding_menu.iml" />
-      <module fileurl="file://$PROJECT_DIR$/zhihuibeijing.iml" filepath="$PROJECT_DIR$/zhihuibeijing.iml" />
       <module fileurl="file://$PROJECT_DIR$/zhihuibeijing-master.iml" filepath="$PROJECT_DIR$/zhihuibeijing-master.iml" />
     </modules>
   </component>

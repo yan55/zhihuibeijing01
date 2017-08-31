@@ -3,6 +3,7 @@ package com.example.administrator.zhihuibeijing;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.view.Window;
@@ -19,6 +20,10 @@ import com.jeremyfeinstein.slidingmenu.lib.app.SlidingFragmentActivity;
  */
 
 public class MainActivity extends SlidingFragmentActivity {
+    private static final String TAG_LEFT_MENU = "TAG_LEFT_MENU";
+    private static final String TAG_CONTENT = "TAG_CONTENT";
+
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -39,8 +44,14 @@ public class MainActivity extends SlidingFragmentActivity {
     public void initfragment() {
         FragmentManager fm = getSupportFragmentManager();
         FragmentTransaction transaction = fm.beginTransaction();
-        transaction.replace(R.id.fl_left_menu, new LeftMenu());
-        transaction.replace(R.id.fl_main, new ContentFragment());
+        transaction.replace(R.id.fl_left_menu, new LeftMenu(), TAG_LEFT_MENU);
+        transaction.replace(R.id.fl_main, new ContentFragment(), TAG_CONTENT);
         transaction.commit();
+    }
+//获取侧边栏的对象
+    public LeftMenu getleftmenuFragment() {
+        FragmentManager fm = getSupportFragmentManager();
+        LeftMenu fragment = (LeftMenu) fm.findFragmentByTag(TAG_LEFT_MENU);
+        return fragment;
     }
 }
