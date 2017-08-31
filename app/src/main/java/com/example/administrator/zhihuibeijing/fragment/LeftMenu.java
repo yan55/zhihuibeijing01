@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import com.example.administrator.zhihuibeijing.MainActivity;
 import com.example.administrator.zhihuibeijing.R;
+import com.example.administrator.zhihuibeijing.base.impl.NewsCenterPager;
 import com.example.administrator.zhihuibeijing.domain.textclass;
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 
@@ -44,7 +45,7 @@ public class LeftMenu extends BaseFragment {
 
     public void setmenudata(List<textclass.DataBean> date) {
         //更新页面
-
+        mcurrentPos=0;
         leftmenuAdaper = new leftmenuAdaper();
         mNewsMenuData = date;
 
@@ -59,9 +60,23 @@ public class LeftMenu extends BaseFragment {
 
                 //收起侧边栏
                 toggle();
+                //当菜单栏点击之后要修改新闻中心的Fragmentlayout的内容
+                setcurrentDetailPer(position);
             }
         });
 
+
+    }
+
+    //设置当前的菜单详情页面
+
+    private void setcurrentDetailPer(int position) {
+        MainActivity mainUi = (MainActivity) mActivity;
+        // 获取ContentFragment
+        ContentFragment fragment = mainUi.getContentFragment();
+        // 获取NewsCenterPager
+        NewsCenterPager newsCenterPager = fragment.getNewsCenterPager();
+        newsCenterPager.setcurrentDetailPager(position);
 
     }
 

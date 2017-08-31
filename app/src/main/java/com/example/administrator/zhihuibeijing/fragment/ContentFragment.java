@@ -116,11 +116,11 @@ public class ContentFragment extends BaseFragment {
     }
 
     public void setSlidingMenuEnable(boolean slidingMenuEnable) {
-        MainActivity mainUI= (MainActivity) mActivity;
+        MainActivity mainUI = (MainActivity) mActivity;
         SlidingMenu slidingMenu = mainUI.getSlidingMenu();
-        if (slidingMenuEnable){
+        if (slidingMenuEnable) {
             slidingMenu.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
-        }else{
+        } else {
             slidingMenu.setTouchModeAbove(SlidingMenu.TOUCHMODE_NONE);
         }
 
@@ -155,5 +155,12 @@ public class ContentFragment extends BaseFragment {
             container.removeView((View) object);
 
         }
+    }
+
+    //获取新闻中心页面
+    public NewsCenterPager getNewsCenterPager() {
+        NewsCenterPager pager = (NewsCenterPager) mpagers.get(1);
+        return pager;
+
     }
 }

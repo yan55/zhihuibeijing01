@@ -48,10 +48,18 @@ public class MainActivity extends SlidingFragmentActivity {
         transaction.replace(R.id.fl_main, new ContentFragment(), TAG_CONTENT);
         transaction.commit();
     }
-//获取侧边栏的对象
+
+    //获取侧边栏的对象
     public LeftMenu getleftmenuFragment() {
         FragmentManager fm = getSupportFragmentManager();
         LeftMenu fragment = (LeftMenu) fm.findFragmentByTag(TAG_LEFT_MENU);
+        return fragment;
+    }
+
+    //获取主页的对象
+    public ContentFragment getContentFragment() {
+        FragmentManager fm = getSupportFragmentManager();
+        ContentFragment fragment = (ContentFragment) fm.findFragmentByTag(TAG_CONTENT);
         return fragment;
     }
 }
