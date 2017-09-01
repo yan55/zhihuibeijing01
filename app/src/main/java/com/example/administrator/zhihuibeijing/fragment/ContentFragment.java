@@ -73,7 +73,6 @@ public class ContentFragment extends BaseFragment {
                     case R.id.rb_setting:
                         vp_content.setCurrentItem(4);
                         break;
-
                 }
 
             }

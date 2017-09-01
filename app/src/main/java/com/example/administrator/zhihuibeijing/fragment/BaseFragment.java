@@ -20,7 +20,8 @@ public abstract class BaseFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mActivity = getActivity();//获取当前的所依赖的activity
+        mActivity = getActivity();
+        //获取当前的所依赖的activity
 
     }
 
@@ -29,7 +30,9 @@ public abstract class BaseFragment extends Fragment {
     /*
     * 初始化fragment的布局
     * */
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater,
+                             @Nullable ViewGroup container,
+                             @Nullable Bundle savedInstanceState) {
 
         View view = initview();
         return view;
@@ -43,7 +46,6 @@ public abstract class BaseFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         //初始化数据
-
         initData();
 
     }
