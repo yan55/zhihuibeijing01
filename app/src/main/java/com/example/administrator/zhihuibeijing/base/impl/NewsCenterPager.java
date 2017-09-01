@@ -45,13 +45,6 @@ public class NewsCenterPager extends BasePager {
     * 初始化数据
     * */
     public void initDate() {
-       /* TextView textView = new TextView(mActivity);
-        textView.setText("新闻中心");
-        textView.setTextSize(16);
-        textView.setTextColor(Color.RED);
-
-        fl_content.addView(textView);
-        tv_text01.setText("新闻中心");*/
 
         String cache = CacheUtils.getcache(mActivity, GlobalConstans.CATEGORY_URL);
         if (!TextUtils.isEmpty(cache)) {

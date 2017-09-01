@@ -5,6 +5,8 @@ import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
+
 import com.example.administrator.zhihuibeijing.MainActivity;
 import com.example.administrator.zhihuibeijing.R;
 import com.example.administrator.zhihuibeijing.base.BeseMenuDetaiPager;
@@ -26,6 +28,7 @@ public class NewsMenuDetailPager extends BeseMenuDetaiPager {
     private ViewPager vp_news_menu_detail;
 
     private TabPageIndicator mIndicator;
+    private ImageButton btn_next;
 
     public NewsMenuDetailPager(Activity activity, ArrayList<textclass.DataBean.ChildrenBean> children) {
         super(activity);
@@ -39,6 +42,8 @@ public class NewsMenuDetailPager extends BeseMenuDetaiPager {
         View view = View.inflate(mactivity, R.layout.pager_news_men_detail, null);
         vp_news_menu_detail = (ViewPager) view.findViewById(R.id.vp_news_menu_detail);
         mIndicator = (TabPageIndicator) view.findViewById(R.id.indicator);
+
+        btn_next = (ImageButton) view.findViewById(R.id.btn_next);
 
         //ViewUtils.inject(this, view);
 
@@ -86,6 +91,15 @@ public class NewsMenuDetailPager extends BeseMenuDetaiPager {
             @Override
             public void onPageScrollStateChanged(int state) {
 
+            }
+        });
+
+        btn_next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int currentItem = vp_news_menu_detail.getCurrentItem();
+                currentItem++;
+                vp_news_menu_detail.setCurrentItem(currentItem);
             }
         });
     }
@@ -144,5 +158,6 @@ public class NewsMenuDetailPager extends BeseMenuDetaiPager {
             slidingMenu.setTouchModeAbove(SlidingMenu.TOUCHMODE_NONE);
         }
     }
+
 
 }
