@@ -15,6 +15,7 @@ import com.example.administrator.zhihuibeijing.base.impl.menu.InteraMenuDetailPa
 import com.example.administrator.zhihuibeijing.base.impl.menu.NewsMenuDetailPager;
 import com.example.administrator.zhihuibeijing.base.impl.menu.PhotosMenuDetailPager;
 import com.example.administrator.zhihuibeijing.base.impl.menu.TopicMenuDetailPager;
+import com.example.administrator.zhihuibeijing.domain.Data;
 import com.example.administrator.zhihuibeijing.domain.textclass;
 import com.example.administrator.zhihuibeijing.fragment.LeftMenu;
 import com.example.administrator.zhihuibeijing.global.GlobalConstans;
@@ -108,10 +109,11 @@ public class NewsCenterPager extends BasePager {
 
         //初始化四个菜单
         menuDetaiPagers = new ArrayList<>();
-        menuDetaiPagers.add(new InteraMenuDetailPager(mActivity));
-        menuDetaiPagers.add(new NewsMenuDetailPager(mActivity));
-        menuDetaiPagers.add(new PhotosMenuDetailPager(mActivity));
+
+        menuDetaiPagers.add(new NewsMenuDetailPager(mActivity,data.getData().get(0).getChildren()));
         menuDetaiPagers.add(new TopicMenuDetailPager(mActivity));
+        menuDetaiPagers.add(new PhotosMenuDetailPager(mActivity));
+        menuDetaiPagers.add(new InteraMenuDetailPager(mActivity));
         setcurrentDetailPager(0);
 
     }

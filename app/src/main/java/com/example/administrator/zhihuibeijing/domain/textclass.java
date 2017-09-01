@@ -1,5 +1,6 @@
 package com.example.administrator.zhihuibeijing.domain;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -15,7 +16,7 @@ public class textclass {
      */
 
     private int retcode;
-    private List<DataBean> data;
+    private ArrayList<DataBean> data;
     private List<Integer> extend;
 
     public int getRetcode() {
@@ -26,11 +27,11 @@ public class textclass {
         this.retcode = retcode;
     }
 
-    public List<DataBean> getData() {
+    public ArrayList<DataBean> getData() {
         return data;
     }
 
-    public void setData(List<DataBean> data) {
+    public void setData(ArrayList<DataBean> data) {
         this.data = data;
     }
 
@@ -63,7 +64,7 @@ public class textclass {
         private String excurl;
         private String dayurl;
         private String weekurl;
-        private List<ChildrenBean> children;
+        private ArrayList<ChildrenBean> children;
 
         public int getId() {
             return id;
@@ -129,11 +130,11 @@ public class textclass {
             this.weekurl = weekurl;
         }
 
-        public List<ChildrenBean> getChildren() {
+        public ArrayList<ChildrenBean> getChildren() {
             return children;
         }
 
-        public void setChildren(List<ChildrenBean> children) {
+        public void setChildren(ArrayList<ChildrenBean> children) {
             this.children = children;
         }
 
