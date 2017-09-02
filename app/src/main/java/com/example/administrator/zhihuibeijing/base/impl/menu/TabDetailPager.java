@@ -16,7 +16,6 @@ import android.widget.Toast;
 
 import com.example.administrator.zhihuibeijing.R;
 import com.example.administrator.zhihuibeijing.Utls.CacheUtils;
-import com.example.administrator.zhihuibeijing.base.BasePager;
 import com.example.administrator.zhihuibeijing.base.BeseMenuDetaiPager;
 import com.example.administrator.zhihuibeijing.domain.NewsBean;
 import com.example.administrator.zhihuibeijing.domain.NewsTaBean;
@@ -54,6 +53,7 @@ public class TabDetailPager extends BeseMenuDetaiPager {
     private ListView lvlist;
     private List<NewsBean> mNewsList;
     private NewsAdaper mNewsAdaper;
+    private View mHeaderView;
 
 
     public TabDetailPager(Activity activity, textclass.DataBean.ChildrenBean childrenBean) {
@@ -72,14 +72,18 @@ public class TabDetailPager extends BeseMenuDetaiPager {
 
         view = View.inflate(mactivity, R.layout.pager_tab_detail, null);
 
-        mViewPager = (TopNewsViewPager) view.findViewById(R.id.vp_top_news);
-
-        mtv_taile = (TextView) view.findViewById(R.id.tv_taile);
-
-        mindicator = (CirclePageIndicator) view.findViewById(R.id.indicator);
-
         lvlist = (ListView) view.findViewById(R.id.lv_list);
 
+
+        mHeaderView = View.inflate(mactivity, R.layout.list_item_header, null);
+
+        mViewPager = (TopNewsViewPager) mHeaderView.findViewById(R.id.vp_top_news);
+
+        mtv_taile = (TextView) mHeaderView.findViewById(R.id.tv_taile);
+
+        mindicator = (CirclePageIndicator) mHeaderView.findViewById(R.id.indicator);
+
+        lvlist.addHeaderView(mHeaderView);
 
         return view;
     }
