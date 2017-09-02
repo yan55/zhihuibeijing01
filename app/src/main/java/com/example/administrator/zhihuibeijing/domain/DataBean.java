@@ -6,7 +6,7 @@ import java.util.List;
  * Created by Administrator on 2017/9/1/001
  */
 
-    public class DataBean {
+    public class  DataBean {
         /**
          * countcommenturl : http://zhbj.qianlong.com/client/content/countComment/
          * more : /10007/list_2.json

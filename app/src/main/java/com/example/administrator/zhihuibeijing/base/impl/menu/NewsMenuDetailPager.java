@@ -6,6 +6,7 @@ import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import com.example.administrator.zhihuibeijing.MainActivity;
 import com.example.administrator.zhihuibeijing.R;
@@ -131,9 +132,13 @@ public class NewsMenuDetailPager extends BeseMenuDetaiPager {
         public Object instantiateItem(ViewGroup container, int position) {
             TabDetailPager pager = mpagers.get(position);
 
-            View view = pager.mrootview;
+            View view = pager.view;
             pager.initData();
 
+//            TextView textView = new TextView(mactivity);
+//            textView.setText("31231231");
+
+                container.addView(view);
             return view;
         }
 
