@@ -10,7 +10,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -50,7 +49,7 @@ public class TabDetailPager extends BeseMenuDetaiPager {
     private final String mUrl;
     private List<TopnewsBean> mTopnews;
     private CirclePageIndicator mindicator;
-    private PullToRefreshListView  lvlist;
+    private PullToRefreshListView lvlist;
     private List<NewsBean> mNewsList;
     private NewsAdaper mNewsAdaper;
     private View mHeaderView;
@@ -72,7 +71,7 @@ public class TabDetailPager extends BeseMenuDetaiPager {
 
         view = View.inflate(mactivity, R.layout.pager_tab_detail, null);
 
-        lvlist = (PullToRefreshListView ) view.findViewById(R.id.lv_list);
+        lvlist = (PullToRefreshListView) view.findViewById(R.id.lv_list);
 
 
         mHeaderView = View.inflate(mactivity, R.layout.list_item_header, null);
@@ -82,8 +81,17 @@ public class TabDetailPager extends BeseMenuDetaiPager {
         mtv_taile = (TextView) mHeaderView.findViewById(R.id.tv_taile);
 
         mindicator = (CirclePageIndicator) mHeaderView.findViewById(R.id.indicator);
-
+        /*
+        * 5.前端界面设置回调
+        * */
         lvlist.addHeaderView(mHeaderView);
+
+        lvlist.setOnRefreshListener(new PullToRefreshListView.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                getDataFromServer();//再次刷新数据
+            }
+        });
 
         return view;
     }
@@ -108,6 +116,8 @@ public class TabDetailPager extends BeseMenuDetaiPager {
             public void onSuccess(ResponseInfo<String> responseInfo) {
                 System.out.println("网路连接成功！");
                 String result = responseInfo.result;
+                //收起下拉事件
+                lvlist.onRefrechComplete(true);
 
                 CacheUtils.setcache(mUrl, result, mactivity);
                 procesData(result);
@@ -118,7 +128,8 @@ public class TabDetailPager extends BeseMenuDetaiPager {
             public void onFailure(HttpException error, String msg) {
                 error.printStackTrace();
                 Toast.makeText(mactivity, "网路连接失败！", Toast.LENGTH_SHORT).show();
-
+                //收起下拉事件
+                lvlist.onRefrechComplete(false);
             }
         });
 
@@ -303,4 +314,6 @@ public class TabDetailPager extends BeseMenuDetaiPager {
         private TextView tv_data;
 
     }
+
+
 }

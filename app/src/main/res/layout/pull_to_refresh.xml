@@ -34,7 +34,7 @@
         android:orientation="vertical" >
 
         <TextView
-            android:id="@+id/tv_title"
+            android:id="@+id/pull_tv_title01"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="下拉刷新"
@@ -42,7 +42,7 @@
             android:textSize="18sp" />
 
         <TextView
-            android:id="@+id/tv_time"
+            android:id="@+id/pull_tv_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="3dp"
