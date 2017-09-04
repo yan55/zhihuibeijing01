@@ -22,6 +22,7 @@ import com.example.administrator.zhihuibeijing.domain.NewsTaBean;
 import com.example.administrator.zhihuibeijing.domain.TopnewsBean;
 import com.example.administrator.zhihuibeijing.domain.textclass;
 import com.example.administrator.zhihuibeijing.global.GlobalConstans;
+import com.example.administrator.zhihuibeijing.view.PullToRefreshListView;
 import com.example.administrator.zhihuibeijing.view.TopNewsViewPager;
 import com.google.gson.Gson;
 import com.lidroid.xutils.BitmapUtils;
@@ -34,7 +35,6 @@ import com.viewpagerindicator.CirclePageIndicator;
 
 import java.util.ArrayList;
 import java.util.List;
-
 
 /**
  * 页签详情页
@@ -50,7 +50,7 @@ public class TabDetailPager extends BeseMenuDetaiPager {
     private final String mUrl;
     private List<TopnewsBean> mTopnews;
     private CirclePageIndicator mindicator;
-    private ListView lvlist;
+    private PullToRefreshListView  lvlist;
     private List<NewsBean> mNewsList;
     private NewsAdaper mNewsAdaper;
     private View mHeaderView;
@@ -72,7 +72,7 @@ public class TabDetailPager extends BeseMenuDetaiPager {
 
         view = View.inflate(mactivity, R.layout.pager_tab_detail, null);
 
-        lvlist = (ListView) view.findViewById(R.id.lv_list);
+        lvlist = (PullToRefreshListView ) view.findViewById(R.id.lv_list);
 
 
         mHeaderView = View.inflate(mactivity, R.layout.list_item_header, null);
